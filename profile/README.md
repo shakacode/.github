@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/shakacode-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/shakacode-light.png">
-    <img alt="ShakaCode" src="./assets/shakacode-light.png" width="400px">
+    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/4244251/184880275-68a7e49d-8778-48a6-a2fd-d6eee80745ba.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/4244251/184880269-c243bf43-b1b5-49de-ba3a-030b25d32480.png">
+    <img alt="ShakaCode" src="https://user-images.githubusercontent.com/4244251/184880269-c243bf43-b1b5-49de-ba3a-030b25d32480.png" width="400px">
   </picture>
 </p>
 
