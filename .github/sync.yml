@@ -1,0 +1,54 @@
+group:
+  # Repos with both claude.yml and claude-code-review.yml
+  - files:
+      - source: .github/workflows/claude-code-review.yml
+        dest: .github/workflows/claude-code-review.yml
+      - source: .github/workflows/claude.yml
+        dest: .github/workflows/claude.yml
+    repos: |
+      shakacode/claude-code-commands-skills-agents
+      shakacode/control-plane-flow
+      shakacode/cypress-playwright-on-rails
+      shakacode/hichee
+      shakacode/hichee-data
+      shakacode/messagebus
+      shakacode/package_json
+      shakacode/rails-v8-kamal-v2-terraform-gcp-tutorial
+      shakacode/react-webpack-rails-tutorial
+      shakacode/react_on_rails
+      shakacode/react_on_rails-demos
+      shakacode/react_on_rails_pro_licensing
+      shakacode/sc-website
+      shakacode/shakaflow
+      shakacode/shakapacker
+      shakacode/uber_task
+
+  # Repos with only claude-code-review.yml
+  - files:
+      - source: .github/workflows/claude-code-review.yml
+        dest: .github/workflows/claude-code-review.yml
+    repos: |
+      shakacode/Significance-Hypothesis-Based-ARC-AGI-2-puzzle-solver
+      shakacode/alternatives
+      shakacode/bootstrap-loader
+      shakacode/coding-agent-utils
+      shakacode/comfortable-media-surfer
+      shakacode/gumroad
+      shakacode/onnxruntime-rs
+      shakacode/petition_code_quality_and_ai
+      shakacode/rails-v8-cpln-flow-terraform-tutorial
+      shakacode/react-ppr-from-scratch
+      shakacode/react-server-components-marketplace-demo
+      shakacode/react_on_rails-demo-v16-ssr-auto-registration-bundle-splitting
+      shakacode/react_on_rails-v16-generator-playground
+      shakacode/react_on_rails_demo_ssr_hmr
+      shakacode/react_on_rails_pro
+      shakacode/react_on_rails_rsc
+      shakacode/rescript-classnames
+      shakacode/rescript-dnd
+      shakacode/rescript-debounce
+      shakacode/rescript-react-on-rails
+      shakacode/sass-resources-loader
+      shakacode/shakaperf
+      shakacode/spike-react-on-rails-tutorial-v15-with-rspack
+      shakacode/steward
