@@ -1,0 +1,30 @@
+#!/bin/sh
+set -eu
+
+ruby -e '
+  require "yaml"
+  Dir[".github/**/*.yml", ".github/**/*.yaml"].sort.each do |file|
+    YAML.safe_load_file(file, aliases: false)
+  end
+'
+
+if command -v actionlint >/dev/null 2>&1; then
+  actionlint
+fi
+
+git diff --check
+git diff --cached --check
+
+ruby -e '
+  files = `git ls-files --others --exclude-standard -z`.split("\0")
+  errors = files.flat_map do |file|
+    data = File.binread(file)
+    next [] if data.include?("\0")
+
+    data.lines.each_with_index.filter_map do |line, index|
+      content = line.sub(/\r?\n\z/, "")
+      "#{file}:#{index + 1}: trailing whitespace" if content.match?(/[ \t]+\z/)
+    end
+  end
+  abort(errors.join("\n")) unless errors.empty?
+'

@@ -1,0 +1,37 @@
+name: Feature request
+description: Propose a focused improvement
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and users
+      description: Who needs this, and what can they not do today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior, public API, and important tradeoffs.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing workarounds or smaller options you evaluated.
+  - type: textarea
+    id: maintenance
+    attributes:
+      label: Maintenance impact
+      description: Compatibility, dependencies, documentation, testing, support, and migration implications.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and discussions.
+          required: true
+        - label: I am willing to help implement or validate this proposal.
+          required: false
