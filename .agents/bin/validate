@@ -4,13 +4,16 @@ set -eu
 ruby -e '
   require "yaml"
   Dir[".github/**/*.yml", ".github/**/*.yaml"].sort.each do |file|
-    YAML.safe_load_file(file, aliases: false)
+    YAML.safe_load_file(file, aliases: true)
   end
 '
 
-if command -v actionlint >/dev/null 2>&1; then
-  actionlint
+if ! command -v actionlint >/dev/null 2>&1; then
+  echo "actionlint is required to validate GitHub Actions workflows" >&2
+  exit 1
 fi
+
+actionlint
 
 git diff --check
 git diff --cached --check
