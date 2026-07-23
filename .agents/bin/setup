@@ -9,7 +9,7 @@ if ! command -v ruby >/dev/null 2>&1; then
   exit 1
 fi
 
-if command -v actionlint >/dev/null 2>&1 || [ -x "$tool_bin/actionlint" ]; then
+if [ -x "$tool_bin/actionlint" ]; then
   exit 0
 fi
 
