@@ -10,6 +10,14 @@ We’re [ShakaCode](https://www.shakacode.com), a global team of open source [cr
 
 If you are looking for help with the development and optimization of your project, ShakaCode can help you to take the reliability and performance of your app to the next level.
 
+## Open-source collaboration
+
+We welcome focused, well-tested contributions. Start with the repository's own
+instructions, then see our organization-wide
+[contribution guide](../CONTRIBUTING.md),
+[security policy](../SECURITY.md), and
+[maintenance baseline](../OPEN_SOURCE_MAINTENANCE.md).
+
 ## Join us
 If you are a developer interested in working on Ruby on Rails / Rust / TypeScript / ReScript projects, [we're hiring](https://www.shakacode.com/career/)!
 
