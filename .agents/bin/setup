@@ -3,13 +3,19 @@ set -eu
 
 root="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
 tool_bin="$root/.agents/.tools/bin"
+actionlint_version="1.7.12"
 
 if ! command -v ruby >/dev/null 2>&1; then
   echo "Ruby is required to validate the repository YAML." >&2
   exit 1
 fi
 
+installed_version=""
 if [ -x "$tool_bin/actionlint" ]; then
+  installed_version="$("$tool_bin/actionlint" -version 2>/dev/null | sed -n '1p' || true)"
+fi
+
+if [ "$installed_version" = "$actionlint_version" ]; then
   exit 0
 fi
 
@@ -20,4 +26,4 @@ if ! command -v go >/dev/null 2>&1; then
 fi
 
 mkdir -p "$tool_bin"
-GOBIN="$tool_bin" go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.12
+GOBIN="$tool_bin" go install "github.com/rhysd/actionlint/cmd/actionlint@v$actionlint_version"

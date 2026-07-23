@@ -18,6 +18,11 @@ if ! command -v actionlint >/dev/null 2>&1; then
   exit 1
 fi
 
+if [ "$(actionlint -version 2>/dev/null | sed -n '1p')" != "1.7.12" ]; then
+  echo "actionlint 1.7.12 is required; run .agents/bin/setup" >&2
+  exit 1
+fi
+
 actionlint
 
 git diff --check
