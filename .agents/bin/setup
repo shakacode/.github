@@ -1,0 +1,23 @@
+#!/bin/sh
+set -eu
+
+root="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool_bin="$root/.agents/.tools/bin"
+
+if ! command -v ruby >/dev/null 2>&1; then
+  echo "Ruby is required to validate the repository YAML." >&2
+  exit 1
+fi
+
+if command -v actionlint >/dev/null 2>&1 || [ -x "$tool_bin/actionlint" ]; then
+  exit 0
+fi
+
+if ! command -v go >/dev/null 2>&1; then
+  echo "Go is required to install the pinned actionlint validator." >&2
+  echo "Install Go, then rerun .agents/bin/setup." >&2
+  exit 1
+fi
+
+mkdir -p "$tool_bin"
+GOBIN="$tool_bin" go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.12

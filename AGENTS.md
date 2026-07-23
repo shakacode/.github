@@ -7,6 +7,8 @@ information, or internal operational details.
 ## Workflow
 
 - Base branch: `main`
+- Setup: `.agents/bin/setup` (requires Ruby and Go; installs pinned
+  `actionlint` under `.agents/.tools/`)
 - Validation: `.agents/bin/validate`
 - Changes require a feature branch and pull request.
 - Organization defaults must remain broadly applicable. Put project-specific
